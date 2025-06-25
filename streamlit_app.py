@@ -17,6 +17,11 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 #st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop
 
+#Convert the snowpark dataframe to pandas
+pd_df=my_dataframe.to_pandas()
+st.dataframe(pd_df)
+st.stop
+
 st.write(
   """Choose the fruits you want in your custom Smoothie!"""
 )
